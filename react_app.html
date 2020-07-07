@@ -20,24 +20,30 @@
         const p = {
             fontSize: "20pt",
             padding: "10px",
+            backgroundColor:"blue",
+            color:"white",
+            cursor:"pointer"
         };
         
         
         var counter = 0;
         
         
-        let el = (
-            <div>
-                <p style={p}>count: {counter}</p>
-            </div>
-        );
-        
-        
-        setInterval(() => {
+        let doAction = (event)=>{
             counter++;
+            let el = (
+                <div>
+                    <p onClick={doAction} style={p}>
+                        count: {counter}
+                    </p>
+                </div>
+            );
             ReactDOM.render(el, dom);
-        }, 1000);
-        </script>     
+        };
+        
+        
+        doAction();
+        </script>
 
   </body>
 
